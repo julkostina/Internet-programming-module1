@@ -39,6 +39,9 @@ section{
 .part2{
     background-color: rgb(220, 255, 220);
 }
+.part3{
+    background-color: rgb(220, 221, 255);
+}
 .name{
     margin:0 auto;
     font-size: 44px;
