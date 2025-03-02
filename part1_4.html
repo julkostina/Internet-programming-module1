@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .top {
+            height: 25%;
+        }
+        .bottom {
+            display: flex;
+            height: 75%;
+        }
+        .bottom iframe {
+            width: 50%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe class="top" src="links.html" name="links"></iframe>
+        <div class="bottom">
+            <iframe src="about:blank" name="content1" style="background-color: rgb(238, 255, 196);"></iframe>
+            <iframe src="about:blank" name="content2" style="background-color: rgb(255, 211, 211);"></iframe>
+        </div>
+    </div>
+</body>
+</html>
