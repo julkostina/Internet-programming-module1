@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Mulish', sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .top {
+            height: 25%;
+        }
+        .bottom {
+            display: flex;
+            height: 75%;
+        }
+        .links{
+            display: flex;
+            gap: 10px;
+        }
+        .links a {
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+        }
+        .bottom iframe {
+            width: 50%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Links to display:</h1>
+    <div class="links">
+        <a href="/assets/orchidjpg.jpg" target="content1">Orchids</a>
+        <a href="/assets/sunflowerjpg.jpg" target="content2">Sunflower</a>
+        <a href="/assets/tulips.jpg" target="content1">Tulip</a>
+        <a href="/assets/rosejpg.jpg" target="content2">Rose</a>
+    </div>
+</body>
+</html>
