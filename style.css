@@ -5,27 +5,6 @@ h1, h2{
 }
 p, a{
     font-family: "Mulish", sans-serif;
-    font-weight: 400;
-}
-section{
-    margin: 50px 100px;
-    padding: 100px;
-}
-.part1{
-    display: grid;
-    gap:0;
-    background-color: rgb(244, 220, 255);
-}
-.name{
-    margin:0 auto;
-    font-size: 44px;
-}
-h1, h2{
-    font-family: "Mulish", sans-serif;
-    font-weight: 800;    
-}
-p, a{
-    font-family: "Mulish", sans-serif;
 }
 section{
     margin: 50px 100px;
@@ -39,15 +18,15 @@ section{
 .part2{
     background-color: rgb(220, 255, 220);
 }
+.name{
+    margin:0 auto;
+    font-size: 44px;
+}
 .part3{
     background-color: rgb(220, 221, 255);
 }
 .part4{
     background-color: rgb(255, 220, 248);
-}
-.name{
-    margin:0 auto;
-    font-size: 44px;
 }
 .task{
     margin:0 auto;
