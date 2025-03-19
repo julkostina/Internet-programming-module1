@@ -1,0 +1,33 @@
+students {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  background-color: rgb(244, 240, 255);
+  padding: 20px 40px;
+}
+student {
+  text-align: center;
+  display: block;
+}
+title {
+  display: block;
+  font-weight: 600;
+  font-size: 30px;
+}
+author {
+  display: block;
+  font-weight: 600;
+}
+gender {
+  display: block;
+    padding-bottom: 10px;
+}
+group {
+  display: block;
+}
+catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 100px;
+}

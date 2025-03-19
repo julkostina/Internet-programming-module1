@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!DOCTYPE students SYSTEM "./students.dtd">
+<?xml-stylesheet type="text/css" href="./students.css"?>
+
+<catalog>
+    <title>Laboratory work 2</title>
+    <author>Yulia Kostina</author>
+    <students>
+        <student>
+            <gender>Male</gender>
+            <group>Group BA-121-22-4-SE</group>
+        </student>
+        <student>
+        <gender>Female</gender>
+            <group>Group BA-121-21-1-SE</group>
+        </student>
+        <student>
+        <gender>Female</gender>
+            <group>Group BA-123-22-1-SE</group>
+        </student>
+        <student>
+        <gender>Male</gender>
+            <group>Group BA-125-22-3-SE</group>
+        </student>
+    </students>
+</catalog>
