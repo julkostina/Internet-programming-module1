@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма студента</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        label, textarea, select { display: block; margin-bottom: 10px; }
+        textarea { width: 100%; height: 80px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Форма введення даних студента</h2>
+        <form id="studentForm">
+            <label for="info">Загальна інформація:</label>
+            <textarea id="info" name="info"></textarea>
+
+            <label>Стать:</label>
+            <label><input type="radio" name="gender" value="male"> Чоловіча</label>
+            <label><input type="radio" name="gender" value="female"> Жіноча</label>
+
+            <label for="group">Виберіть групу:</label>
+            <select id="group" name="group">
+                <option value="group1">Група 1</option>
+                <option value="group2">Група 2</option>
+                <option value="group3">Група 3</option>
+            </select>
+
+            <label for="fileFormat">Формат файлу:</label>
+            <select id="fileFormat">
+                <option value="json">JSON</option>
+                <option value="xml">XML</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Надіслати</button>
+            <button type="button" onclick="saveToFile()">Зберегти у файл</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        let students = [];
+
+        function submitForm() {
+            const info = document.getElementById('info').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const group = document.getElementById('group').value;
+
+            if (!info || !gender) {
+                alert('Будь ласка, заповніть всі поля.');
+                return;
+            }
+
+            const student = { info, gender: gender.value, group };
+            students.push(student);
+            displayStudents();
+        }
+
+        function displayStudents() {
+            const output = document.getElementById('output');
+            output.innerHTML = students.map((s, index) => 
+                `<p>${index + 1}. ${s.info}, Стать: ${s.gender}, Група: ${s.group} 
+                <button onclick="deleteStudent(${index})">Видалити</button>
+                </p>`).join('');
+        }
+
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            displayStudents();
+        }
+
+        function saveToFile() {
+            const format = document.getElementById('fileFormat').value;
+            let dataStr = "", fileName = "";
+
+            if (format === "json") {
+                dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(students, null, 2));
+                fileName = "students.json";
+            } else if (format === "xml") {
+                let xmlData = "<?xml version='1.0' encoding='UTF-8'?><students>";
+                students.forEach(student => {
+                    xmlData += `<student><info>${student.info}</info><gender>${student.gender}</gender><group>${student.group}</group></student>`;
+                });
+                xmlData += "</students>";
+                dataStr = "data:text/xml;charset=utf-8," + encodeURIComponent(xmlData);
+                fileName = "students.xml";
+            }
+
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", fileName);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            document.body.removeChild(downloadAnchor);
+        }
+    </script>
+</body>
+</html>
