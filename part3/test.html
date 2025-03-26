@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematical Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        let num1, num2, operation;
+
+        function generateExample(op) {
+            operation = op;
+            const min = 0, max = document.querySelector(".range-btn.active")?.value || 10;
+            num1 = Math.floor(Math.random() * max);
+            num2 = Math.floor(Math.random() * max);
+            document.getElementById("example").innerText = `${num1} ${operation} ${num2} = ?`;
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answer").value;
+            let correctAnswer;
+            if (operation === "+") correctAnswer = num1 + num2;
+            else if (operation === "-") correctAnswer = num1 - num2;
+            else if (operation === "*") correctAnswer = num1 * num2;
+
+            const result = document.getElementById("result");
+            result.innerText = userAnswer == correctAnswer ? "✅ Right!" : "❌ Wrong!";
+        }
+
+        function setActive(button) {
+            document.querySelectorAll(".range-btn").forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+        }
+
+        function appendNumber(num) { 
+            document.getElementById("answer").value += num;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Mathematical Test</h2>
+
+    <div>
+        <button class="range-btn" value="10" onclick="setActive(this)">0-10</button>
+        <button class="range-btn" value="20" onclick="setActive(this)">0-20</button>
+        <button class="range-btn" value="100" onclick="setActive(this)">0-100</button>
+        <button class="range-btn" value="150" onclick="setActive(this)">0-150</button>
+        <button class="range-btn" value="35" onclick="setActive(this)">20+6</button> 
+    </div>
+
+    <div class="operations">
+        <button onclick="generateExample('+')">+</button>
+        <button onclick="generateExample('-')">-</button>
+        <button onclick="generateExample('*')">*</button>
+    </div>
+
+    <p id="example">?</p>
+    <input type="text" id="answer">
+    <button onclick="checkAnswer()">OK</button>
+    <p id="result"></p>
+
+    <div class="numpad">
+        <button onclick="appendNumber(1)">1</button>
+        <button onclick="appendNumber(2)">2</button>
+        <button onclick="appendNumber(3)">3</button>
+        <button onclick="appendNumber(4)">4</button>
+        <button onclick="appendNumber(5)">5</button>
+        <button onclick="appendNumber(6)">6</button>
+        <button onclick="appendNumber(7)">7</button>
+        <button onclick="appendNumber(8)">8</button>
+        <button onclick="appendNumber(9)">9</button>
+        <button onclick="appendNumber(0)">0</button>
+        <button onclick="document.getElementById('answer').value=''">C</button>
+    </div>
+
+</body>
+</html>
