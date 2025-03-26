@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.range-btn, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.range-btn.active {
+    background-color: #ff9900;
+    color: white;
+}
+
+button:nth-child(1) { background-color: #ff9d9d; }
+button:nth-child(2) { background-color: #82f082; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.range-btn, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.range-btn.active {
+    background-color: #ff9900;
+    color: white;
+}
+
+button:nth-child(1) { background-color: #ff6666; }
+button:nth-child(2) { background-color: #cfffcf; }
+button:nth-child(3) { background-color: #6699ff; }
+button:nth-child(4) { background-color: #b797fc; }
+button:nth-child(5) { background-color: #f2faa6; }
+button:nth-child(6) { background-color: #a6faa9; }
+button:nth-child(7) { background-color: #f2faa6; }
+button:nth-child(8) { background-color: #faa6c2; }
+button:nth-child(9) { background-color: #a6a6fa; }
+button:nth-child(10) { background-color: #fad4a6; }
+button:nth-child(11) { background-color: #a6ebfa; }
+.operations button{
+    background-color: #acb2b34f; 
+}
+.numpad button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+
+.numpad button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
