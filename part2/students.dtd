@@ -1,4 +1,4 @@
 <!ELEMENT students (student*)>
 <!ELEMENT student (gender, group)>
 <!ELEMENT gender (#PCDATA)>
-<!ELEMENT group (#PCDATA)>
+<!ELEMENT group (#PCDATA)>  
