@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:xforms="http://www.w3.org/2002/xforms">
+    <h:head>
+        <h:title>Форма студента</h:title>
+    </h:head>
+    <h:body>
+        <h:h2>Форма введення даних студента</h:h2>
+        <xforms:model>
+            <xforms:instance>
+                <student>
+                    <info></info>
+                    <gender></gender>
+                    <group></group>
+                </student>
+            </xforms:instance>
+        </xforms:model>
+
+        <label>Загальна інформація:</label>
+        <xforms:input ref="info">
+            <xforms:label>Введіть загальну інформацію</xforms:label>
+        </xforms:input>
+
+        <label>Стать:</label>
+        <xforms:select1 ref="gender">
+            <xforms:label>Виберіть стать</xforms:label>
+            <xforms:item>
+                <xforms:label>Чоловіча</xforms:label>
+                <xforms:value>male</xforms:value>
+            </xforms:item>
+            <xforms:item>
+                <xforms:label>Жіноча</xforms:label>
+                <xforms:value>female</xforms:value>
+            </xforms:item>
+        </xforms:select1>
+
+        <label>Виберіть групу:</label>
+        <xforms:select1 ref="group">
+            <xforms:label>Навчальна група</xforms:label>
+            <xforms:item>
+                <xforms:label>Група 1</xforms:label>
+                <xforms:value>group1</xforms:value>
+            </xforms:item>
+            <xforms:item>
+                <xforms:label>Група 2</xforms:label>
+                <xforms:value>group2</xforms:value>
+            </xforms:item>
+            <xforms:item>
+                <xforms:label>Група 3</xforms:label>
+                <xforms:value>group3</xforms:value>
+            </xforms:item>
+        </xforms:select1>
+
+        <xforms:submit submission="submitData"/>
+    </h:body>
+</h:html>
